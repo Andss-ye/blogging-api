@@ -32,7 +32,8 @@ export const createPostController = async (req, res) => {
 }
 
 export const updatePostController = async (req, res) => {
-    const updatedPost = await updatePost(req.params.id, req.body);
+    const postId = parseInt(req.params.id, 10); // Convertir a número
+    const updatedPost = await updatePost(postId, req.body);
     if (!updatedPost) {
         res.status(400).json({ message: "Error al actualizar el post" });
         return;
@@ -42,7 +43,8 @@ export const updatePostController = async (req, res) => {
 }
 
 export const deletePostController = async (req, res) => {
-    const deleted = await deletePost(req.params.id);
+    const postId = parseInt(req.params.id, 10); // Convertir a número
+    const deleted = await deletePost(postId);
     if (!deleted) {
         res.status(400).json({ message: "Error al eliminar el post" });
         return;
