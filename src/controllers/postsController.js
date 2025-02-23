@@ -11,7 +11,8 @@ export const getPostsController = async (req, res) => {
 }
 
 export const getPostIdController = async (req, res) => {
-    const post = await getPostById(req.params.id);
+    const postId = parseInt(req.params.id, 10); // Convertir a número
+    const post = await getPostById(postId);
     if (!post) {
         res.status(404).json({ message: "Post no encontrado" });
         return;

@@ -18,8 +18,7 @@ export const loadDB = async () => {
 export const saveDB = async (data) => {
     try {
         await fs.writeFile(DB_FILE, JSON.stringify(data, null, 2));
-        console.log("Base de datos guardada correctamente.");
     } catch (error) {
-        console.error("Error guardando la base de datos:", error);
+        console.error("❌ Error guardando la base de datos:", error);
     }
 };
