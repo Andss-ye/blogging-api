@@ -1,25 +1,16 @@
 import express from "express";
+import { getPostsController, getPostIdController, createPostController, updatePostController, deletePostController } from "../controllers/postsController.js";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.json({ message: "Aqui estaran todos los posts" });
-});
+router.get("/", getPostsController);
 
-router.get("/:id", (req, res) => {
-  res.json({ message: `Post con id ${req.params.id}` });
-});
+router.get("/:id", getPostIdController);
 
-router.post("/", (req, res) => {
-    res.json({ message: "Post creado", data: req.body });
-});
+router.post("/", createPostController);
 
-router.put("/:id", (req, res) => {
-  res.json({ message: `Post con id ${req.params.id} actualizado`, data: req.body });
-});
+router.put("/:id", updatePostController);
 
-router.delete("/:id", (req, res) => {
-  res.json({ message: `Post con id ${req.params.id} eliminado` });
-});
+router.delete("/:id", deletePostController);
 
 export default router;
