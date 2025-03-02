@@ -33,5 +33,26 @@ Blogging API es una API RESTful diseñada para gestionar un sistema de blogs. Pe
    npm start
    ```
 
+## Endpoints
+### Autenticación
+- `POST /api/auth/register` → Registrar un usuario
+- `POST /api/auth/login` → Iniciar sesión y obtener un token
+
+### Usuarios
+- `GET /api/users/:id` → Obtener información de un usuario
+- `PUT /api/users/:id` → Actualizar información de un usuario
+- `DELETE /api/users/:id` → Eliminar un usuario
+
+### Publicaciones
+- `GET /api/posts` → Obtener todas las publicaciones
+- `GET /api/posts/:id` → Obtener una publicación por ID
+- `POST /api/posts` → Crear una nueva publicación (requiere autenticación)
+- `PUT /api/posts/:id` → Actualizar una publicación (requiere autenticación)
+- `DELETE /api/posts/:id` → Eliminar una publicación (requiere autenticación)
+
+### Comentarios
+- `POST /api/posts/:id/comments` → Agregar un comentario a una publicación
+- `GET /api/posts/:id/comments` → Obtener comentarios de una publicación
+
 Hecho para: 
 https://roadmap.sh/projects/blogging-platform-api
