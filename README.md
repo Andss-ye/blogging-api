@@ -51,8 +51,8 @@ Blogging API es una API RESTful diseñada para gestionar un sistema de blogs. Pe
 - `DELETE /api/posts/:id` → Eliminar una publicación (requiere autenticación)
 
 ### Comentarios
-- `POST /api/posts/:id/comments` → Agregar un comentario a una publicación
-- `GET /api/posts/:id/comments` → Obtener comentarios de una publicación
+- `POST /api/posts/:id/comments` → Agregar un comentario a una publicación.
+- `GET /api/posts/:id/comments` → Obtener comentarios de una publicación.
 
 Hecho para: 
 https://roadmap.sh/projects/blogging-platform-api
